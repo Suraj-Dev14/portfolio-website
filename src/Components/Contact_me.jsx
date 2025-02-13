@@ -9,11 +9,15 @@ function ContactMe() {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        console.log(import.meta.env.VITE_SERVICE_ID);
+        console.log(import.meta.env.VITE_TEMPLATE_ID);
+        console.log(import.meta.env.VITE_PUBLIC_KEY);
+
         emailjs.sendForm(
-            import.meta.env.VITE_SERVICE_ID, 
-            import.meta.env.VITE_TEMPLATE_ID,
+            process.env.VITE_SERVICE_ID, 
+            process.env.VITE_TEMPLATE_ID,
             form.current,
-            import.meta.env.VITE_PUBLIC_KEY
+            process.env.VITE_PUBLIC_KEY
         )
         .then(() => {
             setStatus("Message sent successfully!");

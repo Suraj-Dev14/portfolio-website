@@ -37,11 +37,11 @@ const Skill_data = [
   },
   { skill_logo_path: "/Skill_logos/Keras.png", skill_name: "Keras" },
   {
-    skill_logo_path: "/Skill_logos/TensorFlow.png",
+    skill_logo_path: "/Skill_logos/Tensorflow.png",
     skill_name: "TensorFlow",
   },
   {
-    skill_logo_path: "/Skill_logos/PyTorch.png",
+    skill_logo_path: "/Skill_logos/Pytorch.png",
     skill_name: "PyTorch",
   },
 
