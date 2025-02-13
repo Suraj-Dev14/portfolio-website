@@ -82,7 +82,7 @@ function About() {
 
         <div className="w-full md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
           <img
-            src="src/assets/Photo2.png"
+            src="/Photo2.png"
             alt="My Image"
             className="w-full md:w-[450px] lg:w-[600px] h-auto rounded-[25px] object-cover"
           />
