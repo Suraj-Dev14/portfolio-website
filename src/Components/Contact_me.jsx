@@ -9,10 +9,6 @@ function ContactMe() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        console.log(import.meta.env.VITE_SERVICE_ID);
-        console.log(import.meta.env.VITE_TEMPLATE_ID);
-        console.log(import.meta.env.VITE_PUBLIC_KEY);
-
         emailjs.sendForm(
             process.env.VITE_SERVICE_ID, 
             process.env.VITE_TEMPLATE_ID,

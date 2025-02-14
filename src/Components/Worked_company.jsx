@@ -1,6 +1,6 @@
 function Worked_company({ company_logo_path, job_role, company_name, job_duration, job_description }) {
   return (
-    <div className="flex flex-col border-2 border-[#808080] w-full sm:w-[95%] p-3 sm:p-5 rounded-[25px] gap-2 mb-5 min-h-[50px] max-h-[450px]">
+    <div className="flex flex-col border-2 border-[#808080] w-full sm:w-[95%] p-3 sm:p-5 rounded-[25px] gap-2 mb-5 min-h-[50px] max-h-[500px]">
       
       <img
         src={company_logo_path}
