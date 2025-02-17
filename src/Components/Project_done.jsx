@@ -1,6 +1,38 @@
+import { useEffect, useRef } from "react";
+
 function Project_done({ project_name, project_photo, project_description }) {
+  const projectRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (projectRef.current) {
+      observer.observe(projectRef.current);
+    }
+
+    return () => {
+      if (projectRef.current) {
+        observer.unobserve(projectRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col lg:flex-row gap-5 mb-10 items-center border-2 border-[#808080] rounded-[25px] p-5">
+    <div
+      ref={projectRef}
+      className="projects flex flex-col lg:flex-row gap-5 mb-10 items-center border-2 border-[#808080] rounded-[25px] p-5"
+    >
       <div className="w-full lg:w-[50%] flex items-center justify-center">
         <img
           className="w-full sm:w-[90%] md:w-[80%] lg:w-[600px] h-auto rounded-[25px] object-cover"

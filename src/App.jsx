@@ -1,3 +1,4 @@
+import "./App.css";
 import Navbar from "./Components/Navbar";
 import About from "./Components/About";
 import Worked_company from "./Components/Worked_company";
@@ -8,11 +9,13 @@ import Project_done from "./Components/Project_done";
 import Projects_data from "./assets/Data/Project_done";
 import Contectme from "./Components/Contact_me";
 import Footer from "./Components/Footer";
+import ParticlesComponent from "./Components/Particles";
 
 function App() {
   return (
     <>
-      <div className="w-full text-white bg-black min-h-screen overflow-y-auto">
+      <ParticlesComponent id="particles"/>
+      <div className="w-full text-white min-h-screen overflow-y-auto"> 
         <Navbar />
         <About />
         <div id="work" className="flex flex-col md:flex-row p-6 md:p-10">
