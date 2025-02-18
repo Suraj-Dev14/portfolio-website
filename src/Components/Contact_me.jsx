@@ -2,28 +2,31 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 function ContactMe() {
-
   const form = useRef();
   const [status, setStatus] = useState("");
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-        emailjs.sendForm(
-            process.env.VITE_SERVICE_ID, 
-            process.env.VITE_TEMPLATE_ID,
-            form.current,
-            process.env.VITE_PUBLIC_KEY
-        )
-        .then(() => {
-            setStatus("Message sent successfully!");
-            form.current.reset();
-        })
-        .catch(() => setStatus("Failed to send message. Try again."));
-    };
+    emailjs
+      .sendForm(
+        process.env.VITE_SERVICE_ID,
+        process.env.VITE_TEMPLATE_ID,
+        form.current,
+        process.env.VITE_PUBLIC_KEY
+      )
+      .then(() => {
+        setStatus("Message sent successfully!");
+        form.current.reset();
+      })
+      .catch(() => setStatus("Failed to send message. Try again."));
+  };
 
   return (
-    <section id="contactme" className="flex flex-col border-2 border-gray-400 p-5 rounded-3xl w-[100%] gap-3 mb-5 min-h-[50px] max-h-[750px]">
+    <section
+      id="contactme"
+      className="flex flex-col border-2 border-gray-400 p-5 rounded-3xl w-[100%] gap-3 mb-5 min-h-[50px] max-h-[750px]"
+    >
       <h2 className="text-4xl font-bold text-center">Contact Me</h2>
       <form ref={form} onSubmit={sendEmail}>
         <div className="flex flex-col gap-2">
@@ -66,7 +69,11 @@ function ContactMe() {
         >
           Send
         </button>
-        {status && <h1 className={`text-green-500 text-2xl text-center p-2`}>{status}</h1>}
+        {status && (
+          <h1 className={`text-green-500 text-2xl text-center p-2`}>
+            {status}
+          </h1>
+        )}
       </form>
     </section>
   );

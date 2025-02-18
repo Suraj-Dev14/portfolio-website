@@ -5,7 +5,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-end shadow-md p-10 pb-0">
+    <nav className="flex justify-end p-10 pb-0">
       <div className="container flex flex-row-reverse w-[100%]">
 
         <button
@@ -30,7 +30,7 @@ function Navbar() {
             <li
               key={index}
               className={`text-xl p-2 rounded-[25px] w-[100px] text-[#ffffff] text-center ${
-                item.special ? "bg-blue-600 text-white" : "hover:bg-[#ffffff] hover:text-black"
+                item.special ? "bg-[#f3904f] text-white" : "hover:bg-[#ffffff] hover:text-black"
               }`}
             >
               <a href={item.link} className={isOpen ? "text-[#000000]" : ""}>{item.name}</a>

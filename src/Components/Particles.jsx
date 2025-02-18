@@ -26,7 +26,7 @@ const ParticlesComponent = (props) => {
 
   const options = useMemo(
     () => ({
-      background: { color: { value: "#000000" } },
+      background: { color: { value: "#252525" } },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -40,7 +40,7 @@ const ParticlesComponent = (props) => {
       },
       particles: {
         color: { value: "#ffffff" },
-        links: { color: "#ffffff", distance: 150, enable: true, opacity: 0.3, width: 1 },
+        links: { color: "#808080", distance: 150, enable: true, opacity: 0.3, width: 1 },
         move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: true, speed: 1, straight: false },
         number: { density: { enable: true }, value: 150 },
         opacity: { value: 1.0 },
